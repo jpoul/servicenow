@@ -27,6 +27,26 @@
             }
           }
         }
+      },
+      "post": {
+        "summary": "Create incident",
+        "operationId": "CreateIncident",
+        "parameters": [{
+          "name": "incident",
+          "in": "body",
+           "required": true,
+          "schema": {
+              "$ref": "#/definitions/incident"
+          }
+        }],
+        "responses" : {
+          "200" : {
+            "description": "Incident created",
+            "schema": {
+              "$ref": "#/definitions/incidentResult"
+            }
+          }
+      }
       }
     },
     "/incident/{id}": {
