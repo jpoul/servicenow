@@ -15,14 +15,32 @@
     "application/json"
   ],
   "paths": {
-    "/incidents": {
+    "/incident": {
       "get": {
-        "summary": "Get a list of incedents",
+        "summary": "Get a list of incidents",
         "responses": {
           "200": {
-            "description": "The list of incidents",
+            "description": "Incidents result",
             "schema": {
               "$ref": "#/definitions/incidentsResult"
+            }
+          }
+        }
+      }
+    },
+    "/incident/{id}": {
+      "parameters": [{
+        "id": {
+          "type": "string"
+        }
+      }],
+      "get": {
+        "summary": "Get an incident",
+        "responses": {
+          "200": {
+            "description": "Incident result",
+            "schema": {
+              "$ref": "#/definitions/incidentResult"
             }
           }
         }
@@ -31,9 +49,23 @@
   },
   "definitions": {
     "incidentsResult": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/incident"
+      "properties": {
+        "result" :{
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/incident"
+          }
+        }
+      }
+    },
+    "incidentResult": {
+      "properties": {
+        "result": {
+          "type": "object",
+          "schema" :{
+            "$ref": "#/definitions/incident"
+          }
+        }
       }
     },
     "incident": {

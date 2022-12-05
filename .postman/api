@@ -5,11 +5,13 @@ id = e5cd4c85-7fc5-467b-912d-7aec0abcb869
 
 [relations.collections]
 rootDirectory = postman/collections
+files[] = {"id":"2149812-974981f2-b8c5-4f96-85e6-5dcddb0ea1dc","path":"ServiceNow.json","metaData":{}}
 
 [relations.collections.metaData]
 
 [relations.apiDefinition]
 rootDirectory = postman/schemas
+files[] = {"path":"index.json","metaData":{}}
 
 [relations.apiDefinition.metaData]
 type = openapi:2

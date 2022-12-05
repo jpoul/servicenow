@@ -1,0 +1,117 @@
+{
+	"info": {
+		"_postman_id": "974981f2-b8c5-4f96-85e6-5dcddb0ea1dc",
+		"name": "ServiceNow",
+		"description": "ServiceNow sample OpenAPI spec",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "2149812-974981f2-b8c5-4f96-85e6-5dcddb0ea1dc"
+	},
+	"item": [
+		{
+			"name": "Get a list of incedents",
+			"id": "b31371e0-a2c0-4485-b829-477e02dbfb4d",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/incidents",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"incidents"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "39798942-5ac9-4595-8f09-2435145d84db",
+					"name": "The list of incidents",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: basic",
+								"key": "Authorization",
+								"value": "Basic <credentials>"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/incidents",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"incidents"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "[\n\t{\n\t\t\"sys_id\": \"<string>\",\n\t\t\"number\": \"<string>\",\n\t\t\"short_description\": \"<string>\",\n\t\t\"description\": \"<string>\"\n\t},\n\t{\n\t\t\"sys_id\": \"<string>\",\n\t\t\"number\": \"<string>\",\n\t\t\"short_description\": \"<string>\",\n\t\t\"description\": \"<string>\"\n\t}\n]"
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "ibZ=9K0pkM$X",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "admin",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "7a570370-66cf-4027-ba68-b1e6eff6c1e7",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "2b413abb-fa40-4602-b7de-2082fc4fede9",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "35ad196e-6081-43ec-8b06-5ef01c04842a",
+			"key": "baseUrl",
+			"value": "https://dev125469.service-now.com/api/now/table",
+			"type": "string"
+		}
+	]
+}
