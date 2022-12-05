@@ -18,6 +18,7 @@
     "/incident": {
       "get": {
         "summary": "Get a list of incidents",
+       "operationId": "ListIncidents",
         "responses": {
           "200": {
             "description": "Incidents result",
@@ -29,14 +30,15 @@
       }
     },
     "/incident/{id}": {
-      "parameters": [{
+      "get": {
+          "parameters": [{
         "in": "path",
         "name": "id",
         "type": "string",
         "required": true,
         "description": "The incident id"
       }],
-      "get": {
+        "operationId": "ReadIncident",
         "summary": "Get an incident",
         "responses": {
           "200": {
