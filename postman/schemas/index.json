@@ -30,9 +30,11 @@
     },
     "/incident/{id}": {
       "parameters": [{
-        "id": {
-          "type": "string"
-        }
+        "in": "path",
+        "name": "id",
+        "type": "string",
+        "required": true,
+        "description": "The incident id"
       }],
       "get": {
         "summary": "Get an incident",
@@ -61,10 +63,7 @@
     "incidentResult": {
       "properties": {
         "result": {
-          "type": "object",
-          "schema" :{
             "$ref": "#/definitions/incident"
-          }
         }
       }
     },
