@@ -1,0 +1,67 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "ServiceNow Sample OpenAPI",
+    "description": "ServiceNow sample OpenAPI spec"
+  },
+  "basePath": "/api/now/table",
+  "host": "dev125469.service-now.com",
+  "schemes": ["https"],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/incidents": {
+      "get": {
+        "summary": "Get a list of incedents",
+        "responses": {
+          "200": {
+            "description": "The list of incidents",
+            "schema": {
+              "$ref": "#/definitions/incidentsResult"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "incidentsResult": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/incident"
+      }
+    },
+    "incident": {
+      "type": "object",
+      "properties": {
+         "sys_id": {
+           "type":"string"
+         },
+         "number": {
+           "type":"string"
+         },
+         "short_description": {
+           "type":"string"
+         },
+        "description": {
+           "type":"string"
+         }
+      }
+    }
+  },
+  "securityDefinitions": {
+    "basicAuth": {
+      "type": "basic"
+    }
+  },
+  "security": [
+    {
+      "basicAuth": []
+    }
+  ]
+}
